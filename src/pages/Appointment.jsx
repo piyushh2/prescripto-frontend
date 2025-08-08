@@ -17,9 +17,16 @@ const Appointment = () => {
   const [slotTime, setSlotTime] = useState('');
 
   const fetchDocInfo = async () => {
-    const docInfo = doctors.find(doc => doc._id === docId);
-    setDocInfo(docInfo);
+    // const docInfo = doctors.find(doc => doc._id === docId);
+    // setDocInfo(docInfo);
+    try {
+      const { data } = await axios.get(`${backendUrl}/api/doctor/${docId}`);
+      if (data.success) setDocInfo(data.doctor);
+    } catch (error) {
+      console.log(error);
+    }
   }
+
   const getAvailableSlots = async () => {
     if (!docInfo || !docInfo.slots_booked) return;
     setDoctorSlots([]);
