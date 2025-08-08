@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <div className='md:mx-10'>
       <div className='flex flex-col sm:grid grid-cols-[2fr_1fr_1fr] gap-14 my-14 text-sm'>
-        {/* L */}
+        {/* Left */}
         <div>
           <img src={assets.logo} alt="" className='mb-5 w-50' />
           <p className='w-full md:w-9/10 text-gray-600 leading-6 text-md'>One-stop solution for booking doctor appointments, effortlessly browse doctor profiles, check real-time availability, and schedule appointments — all in one place. Designed for convenience, speed, and reliability, it ensures smooth and hassle-free access to quality medical care.</p>
         </div>
-        {/* C */}
+        {/* Centre */}
         <div>
           <p className='text-xl font-medium mb-5'>Company</p>
           <ul className='flex flex-col gap-2 text-gray-600 text-md'>
@@ -20,7 +20,7 @@ const Footer = () => {
             <li className='cursor-pointer w-fit'>Privacy Policy</li>
           </ul>
         </div>
-        {/* R */}
+        {/* Right */}
         <div>
           <p className='text-xl font-medium mb-5'>Get in Touch</p>
           <ul className='flex flex-col gap-2 text-gray-600 text-md'>
@@ -38,4 +38,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;

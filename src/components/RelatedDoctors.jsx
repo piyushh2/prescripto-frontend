@@ -32,7 +32,6 @@ const RelatedDoctors = ({ docId, speciality }) => {
           ))}
         </div>
       </div>
-
     </div>
   )
 }

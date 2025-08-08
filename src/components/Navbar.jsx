@@ -55,7 +55,7 @@ const Navbar = () => {
         :
         <>
           <div className='flex justify-end gap-4'>
-            <button className='text-white px-8 py-3 rounded-full font-light hidden md:block cursor-pointer bg-primary' onClick={() => window.location.href = 'https://prescripto-brown.vercel.app'}>
+            <button className='text-white px-8 py-3 rounded-full font-light hidden md:block cursor-pointer bg-primary' onClick={() => window.location.href = 'https://prescripto--admin.vercel.app/'}>
               Admin Panel
             </button>
             <button className='text-white px-8 py-3 rounded-full font-light hidden md:block cursor-pointer bg-primary' onClick={() => { navigate('/login'); scrollTo(0, 0) }}>Sign In</button>
