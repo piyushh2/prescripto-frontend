@@ -91,13 +91,10 @@ const Appointment = () => {
     }
   }
 
-  // useEffect(() => { fetchDocInfo() }, [doctors, docId]);
   useEffect(() => {
-    // Always refresh doctors data when entering this page
     const fetchData = async () => {
-      await getDoctorsData(); // pulls fresh data into context
-      const updatedDoc = doctors.find(doc => doc._id === docId);
-      setDocInfo(updatedDoc);
+      await getDoctorsData();
+      setDocInfo(doctors.find(doc => doc._id === docId));
     };
     fetchData();
   }, [docId]);
