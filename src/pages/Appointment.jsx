@@ -16,16 +16,16 @@ const Appointment = () => {
   const [slotIndex, setSlotIndex] = useState(0);
   const [slotTime, setSlotTime] = useState('');
 
-  const fetchDocInfo = async () => {
-    // const docInfo = doctors.find(doc => doc._id === docId);
-    // setDocInfo(docInfo);
-    try {
-      const { data } = await axios.get(`${backendUrl}/api/doctor/${docId}`);
-      if (data.success) setDocInfo(data.doctor);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // const fetchDocInfo = async () => {
+  //   const docInfo = doctors.find(doc => doc._id === docId);
+  //   setDocInfo(docInfo);
+  //   try {
+  //     const { data } = await axios.get(`${backendUrl}/api/doctor/${docId}`);
+  //     if (data.success) setDocInfo(data.doctor);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   const getAvailableSlots = async () => {
     if (!docInfo || !docInfo.slots_booked) return;
@@ -91,7 +91,21 @@ const Appointment = () => {
     }
   }
 
-  useEffect(() => { fetchDocInfo() }, [doctors, docId]);
+  // useEffect(() => { fetchDocInfo() }, [doctors, docId]);
+  useEffect(() => {
+    // Always refresh doctors data when entering this page
+    const fetchData = async () => {
+      await getDoctorsData(); // pulls fresh data into context
+      const updatedDoc = doctors.find(doc => doc._id === docId);
+      setDocInfo(updatedDoc);
+    };
+    fetchData();
+  }, [docId]);
+
+  useEffect(() => {
+    getAvailableSlots();
+  }, [docInfo]);
+
   useEffect(() => { getAvailableSlots() }, [docInfo]);
 
   return docInfo && (
