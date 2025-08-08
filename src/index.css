@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-primary {
+  background-color: #5f6FFF;
+}
+
+.border-primary {
+  border-color: #5f6FFF;
+}
+
+.text-primary {
+  color: #5f6FFF;
+}
+
+.hover\:bg-primary:hover {
+  background-color: #5f6FFF;
+}
+
+.grid-cols-auto {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.active hr {
+  @apply block
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  @apply hidden
+}
+
+@media (max-width:740px) {
+  .active p {
+    @apply text-white bg-[#5f6FFF]
+  }
+}
