@@ -15,7 +15,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const App = () => {
   return (
     // <div className='mx-4 sm:mx-[10%]'>
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col px-4">
       <ToastContainer />
       <Navbar />
       <div className="flex-grow mx-4 sm:mx-[10%]">
