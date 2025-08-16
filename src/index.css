@@ -46,3 +46,7 @@
     @apply text-white bg-[#5f6FFF]
   }
 }
+
+html, body, #root {
+  height: 100%;
+}
